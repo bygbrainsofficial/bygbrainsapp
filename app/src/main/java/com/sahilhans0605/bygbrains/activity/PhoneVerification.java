@@ -88,6 +88,7 @@ public class PhoneVerification extends AppCompatActivity {
                                         if (task.isSuccessful()) {
                                             dialog2.dismiss();
                                             Intent intent = new Intent(PhoneVerification.this, BasicQuestions.class);
+                                            intent.putExtra("name", name);
                                             startActivity(intent);
                                             finishAffinity();
                                         } else {

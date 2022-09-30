@@ -37,6 +37,7 @@ public class StartingPage extends AppCompatActivity {
         setContentView(binding.getRoot());
         user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
+
             dialog2.show();
             DatabaseReference dbRef = db.getReference("BasicQuestions");
             dbRef.addValueEventListener(new ValueEventListener() {
@@ -62,6 +63,7 @@ public class StartingPage extends AppCompatActivity {
                 }
             });
         }
+
         binding.getStarted.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

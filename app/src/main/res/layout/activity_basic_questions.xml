@@ -1,48 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#5BA2F4"
     tools:context=".activity.BasicQuestions">
 
-    <TextView
-        android:id="@+id/questionD"
-        android:layout_width="263dp"
+    <RelativeLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:gravity="center"
-        android:text="Question"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/interactionD"
-        android:layout_width="263dp"
+        android:id="@+id/questionD"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="23dp"
+        android:gravity="center"
+        android:text="Question"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/interactionD"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
         android:gravity="center"
         android:text="Interaction"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="28sp"
+        android:textStyle="italic"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/option5D" />
 
     <TextView
         android:id="@+id/option3D"
-        android:layout_width="263dp"
+        android:layout_width="match_parent"
         android:layout_height="44dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="24dp"
+        android:layout_marginRight="20dp"
         android:background="@drawable/textview"
-        android:backgroundTint="@color/purple_500"
+        android:backgroundTint="@color/white"
         android:gravity="center"
         android:onClick="next"
         android:text="option3"
@@ -55,11 +69,13 @@
 
     <TextView
         android:id="@+id/option5D"
-        android:layout_width="263dp"
+        android:layout_width="match_parent"
         android:layout_height="44dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="28dp"
+        android:layout_marginRight="20dp"
         android:background="@drawable/textview"
-        android:backgroundTint="@color/purple_500"
+        android:backgroundTint="@color/white"
         android:gravity="center"
         android:onClick="next"
         android:text="option5"
@@ -71,14 +87,15 @@
         app:layout_constraintTop_toBottomOf="@+id/option4D" />
 
 
-
     <TextView
         android:id="@+id/option4D"
-        android:layout_width="263dp"
+        android:layout_width="match_parent"
         android:layout_height="44dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="24dp"
+        android:layout_marginRight="20dp"
         android:background="@drawable/textview"
-        android:backgroundTint="@color/purple_500"
+        android:backgroundTint="@color/white"
         android:gravity="center"
         android:onClick="next"
         android:text="option4"
@@ -91,11 +108,13 @@
 
     <TextView
         android:id="@+id/option2D"
-        android:layout_width="263dp"
+        android:layout_width="match_parent"
         android:layout_height="44dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="24dp"
+        android:layout_marginRight="20dp"
         android:background="@drawable/textview"
-        android:backgroundTint="@color/purple_500"
+        android:backgroundTint="@color/white"
         android:gravity="center"
         android:onClick="next"
         android:text="option2"
@@ -108,14 +127,16 @@
 
     <TextView
         android:id="@+id/option1D"
-        android:layout_width="263dp"
+        android:layout_width="match_parent"
         android:layout_height="44dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="32dp"
+        android:layout_marginRight="20dp"
         android:background="@drawable/textview"
+        android:backgroundTint="@color/white"
         android:gravity="center"
-        android:text="option1"
-        android:backgroundTint="@color/purple_500"
         android:onClick="next"
+        android:text="option1"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="28sp"
@@ -125,16 +146,32 @@
 
     <Button
         android:id="@+id/buttonD"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="20dp"
         android:onClick="next"
         android:text="next"
-        android:visibility="invisible"
+        app:cornerRadius="10dp"
+        app:layout_constraintCircleRadius="20dp"
         app:layout_constraintEnd_toEndOf="@+id/interactionD"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/interactionD"
         app:layout_constraintTop_toBottomOf="@+id/interactionD" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="23dp"
+        android:layout_marginTop="40dp"
+        android:text="Here are few Questions we wanna ask!"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -36,6 +37,8 @@ public class BasicQuestions extends AppCompatActivity {
     ProgressDialog dialog;
     FirebaseUser user;
     FirebaseAuth auth;
+    String userName;
+    Boolean selected = true;
 
 
     @Override
@@ -48,7 +51,7 @@ public class BasicQuestions extends AppCompatActivity {
         dialog = new ProgressDialog(this);
         dialog.setMessage("loading...");
         dialog.setCanceledOnTouchOutside(false);
-
+        userName = getIntent().getStringExtra("name");
         db = FirebaseDatabase.getInstance();
         user = FirebaseAuth.getInstance().getCurrentUser();
         setContentView(binding.getRoot());
@@ -66,6 +69,7 @@ public class BasicQuestions extends AppCompatActivity {
 
 
     void setNextQuestion() {
+        selected = false;
         if (currentQuestionIndex < questions.size()) {
             question = questions.get(currentQuestionIndex);
             binding.questionD.setText(question.getQuestion());
@@ -97,7 +101,6 @@ public class BasicQuestions extends AppCompatActivity {
                 chosen = binding.option5D.getText().toString();
                 break;
         }
-
         switch (view.getId()) {
 
             case R.id.option1D:
@@ -105,7 +108,6 @@ public class BasicQuestions extends AppCompatActivity {
             case R.id.option3D:
             case R.id.option4D:
             case R.id.option5D:
-
                 binding.interactionD.setVisibility(View.VISIBLE);
                 binding.interactionD.setText(question.getInteraction());
                 binding.buttonD.setVisibility(View.VISIBLE);
@@ -113,6 +115,7 @@ public class BasicQuestions extends AppCompatActivity {
 
 
             case R.id.buttonD:
+
 
                 binding.buttonD.setVisibility(View.INVISIBLE);
                 binding.interactionD.setVisibility(View.INVISIBLE);
